@@ -12,6 +12,8 @@ const SignupForm = props => {
     passwordConf: '',
   })
 
+  const [photoData, setPhotoData] = useState({})
+
   const handleChange = e => {
     props.updateMessage('')
     setFormData({
@@ -27,7 +29,7 @@ const SignupForm = props => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await authService.signup(formData)
+      await authService.signup(formData, photoData.photo)
       props.handleSignupOrLogin()
       navigate('/')
     } catch (err) {
@@ -93,12 +95,23 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
+      <div className={styles.inputContainerPhoto}>
+        <label htmlFor="photo-upload" className={styles.label}>
+          Upload Photo
+        </label>
+        <input
+          type="file"
+          id="photo-upload"
+          name="photo"
+          onChange={handleChangePhoto}
+        />
+      </div>
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
+        <button disabled={isFormInvalid()} className={styles.button17}>
           Sign Up
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className={styles.button17}>Cancel</button>
         </Link>
       </div>
     </form>

@@ -49,5 +49,16 @@ async function deleteOne(affirmationId) {
   return res.json()
 }
 
+async function addPhoto(photoData, id) {
+  const res = await fetch(`${BASE_URL}/${id}/add-photo`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: photoData
+  })
+  return await res.json()
+}
 
-export { getAllProfiles, create, show, deleteOne }
+
+export { getAllProfiles, create, show, deleteOne, addPhoto }

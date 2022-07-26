@@ -1,10 +1,11 @@
 import styles from './Landing.module.css'
+import LandingPic from '../../assests/landing-flower-bg.png'
 
 const Landing = ({ user }) => {
   return (
     <div className={styles.landingBg}>
       <div className={styles.flowerLandDiv}>
-        <img className={styles.flowerLandImg} src="../../public/landing-flower-bg.png" alt="Landing Page Flower" />
+        <img className={styles.flowerLandImg} src={ LandingPic } alt="Landing Page Flower" />
       </div>
       <div className={styles.landingTextDiv}>
         <div className={styles.h1Div}>

@@ -4,11 +4,11 @@ import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
+import Profiles from './pages/AllAffirmations.jsx/AllAffirmations'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import Affirmation from './pages/Affirmation/Affirmation'
-import Index from './pages/Index/Index'
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())

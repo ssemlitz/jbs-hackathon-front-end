@@ -1,3 +1,6 @@
+import FormImg from '../../assests/flower-aff-bg.png'
+import styles from './AddAffirmation.module.css'
+
 const AddAffirmation = () => {
   return (
     <div className={styles.affirmationBg}>
@@ -33,7 +36,7 @@ const AddAffirmation = () => {
       <div className={styles.flowerDiv}>
         <img
           className={styles.flowerImg}
-          src="../../public/flower-aff-bg.png"
+          src={ FormImg }
           alt="Img of Affirmation Flower"
         />
       </div>

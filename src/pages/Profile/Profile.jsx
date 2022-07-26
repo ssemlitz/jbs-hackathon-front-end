@@ -3,12 +3,21 @@ import { useParams } from "react-router-dom"
 import styles from './Profile.module.css'
 import * as profileService from '../../services/profileService'
 import AffirmationCard from '../../components/AffirmationCard/AffirmationCard'
+import { Link } from "react-router-dom"
 
 
 
 const Profile = ({ user }) => {
-  const { id } = useParams()
+  const {id} = useParams()
   const [profile, setProfile] = useState()
+  const [formData, setFormData] = useState({
+    thankful1: '',
+    thankful2: '',
+    thankful3: '',
+    thingsIDidWell: '',
+    selfComp: '',
+  })
+
 
 
   useEffect(() => {
@@ -18,6 +27,29 @@ const Profile = ({ user }) => {
     }
     fetchProfile()
   }, [id])
+
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+
+  const handleSubmit = async evt => {
+    evt.preventDefault()
+    handleAddAffirmation(formData)
+    setFormData({
+      thankful1: '',
+      thankful2: '',
+      thankful3: '',
+      thingsIDidWell: '',
+      selfComp: '',
+    })
+  }
+
+  const handleAddAffirmation = async (newAffirmationData) => {
+    const updatedProfile = await profileService.create(newAffirmationData, user.profile)
+    setProfile(updatedProfile)
+  }
+
 
   const handleDeleteAffirmation = async (affirmationId) => {
     console.log('affirmationId', affirmationId)
@@ -34,13 +66,95 @@ const Profile = ({ user }) => {
             <h4 className={styles.profNameh4}>{profile?.name}</h4>
           </div>
           <div className={styles.profilePageContents}>
+
+
+            {/* affirmation form */}
+
+            <div className={styles.formBodyDiv}>
+      <form
+        className={styles.formBody}
+        autoComplete="off"
+        onSubmit={handleSubmit}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="thankful">Three things you're thankful for</label>
+          <ol className={styles.orderedInput}>
+            <input
+              type="text"
+              className="thankful-1"
+              id="thankful-1"
+              name="thankful1"
+              value={formData.thankful1}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              className="thankful-2"
+              id="thankful-2"
+              name="thankful2"
+              value={formData.thankful2}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              className="thankful-3"
+              id="thankful-3"
+              name="thankful3"
+              value={formData.thankful3}
+              onChange={handleChange}
+              required
+            />
+          </ol>
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="thingsIDidWell" className={styles.label}>One thing you did well today</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="didwell"
+            value={formData.thingsIDidWell}
+            name="thingsIDidWell"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="selfComp" className={styles.label}>One thing you like about yourself</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="selfComp"
+            value={formData.selfComp}
+            name="selfComp"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className={styles.buttonsDiv}>
+          <button
+            className={styles.button17}
+            type="submit">
+            Submit
+          </button>
+          <Link to="/">
+            <button className={styles.button17}>Cancel</button>
+          </Link>
+        </div>
+      </form>
+    </div>
+
+
+
+
+
             {profile?.userActivity?.length ?
               <>
                 {profile?.affirmations?.map(affirmation =>
                   <AffirmationCard
                     key={affirmation._id}
                     affirmation={affirmation}
-                    profile={profile}
+                    profile={user?.profile}
                     user={user}
                     handleDeleteAffirmation={handleDeleteAffirmation}
                   />

@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link} from 'react-router-dom'
 import styles from './AffirmationForm.module.css'
 import * as profileService from '../../services/profileService'
 
-const AffirmationForm = (props, { user }) => {
+const AffirmationForm = (props) => {
   const [profile, setProfile] = useState()
   const [formData, setFormData] = useState({
     thankful1: '',
@@ -13,7 +13,17 @@ const AffirmationForm = (props, { user }) => {
     selfComp: '',
   })
 
-  console.log(profile)
+
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profileService.show(props.id)
+      setProfile(profileData)
+      // set activities based on profiledata.activities
+    }
+    fetchProfile()
+  }, [props.id])
+
 
 
   const handleChange = e => {
@@ -33,12 +43,13 @@ const AffirmationForm = (props, { user }) => {
   }
 
 
+
   const handleAddAffirmation = async (newAffirmationData) => {
-    const updatedProfile = await profileService.create(newAffirmationData, user.profile)
+    const updatedProfile = await profileService.create(newAffirmationData, props.user?.profile)
     setProfile(updatedProfile)
   }
 
-
+  console.log('prof test', props.user?.profile)
 
   return (
     <div className={styles.formBodyDiv}>

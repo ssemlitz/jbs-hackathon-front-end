@@ -10,4 +10,44 @@ async function getAllProfiles() {
 }
 
 
-export { getAllProfiles }
+
+async function create(affirmation, id) {
+  const res = await fetch(`${BASE_URL}/${id}/affirmations`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(affirmation)
+  })
+  return res.json()
+}
+
+
+async function show(id) {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }
+  })
+  return res.json()
+}
+
+
+
+async function deleteOne(affirmationId) {
+  console.log(affirmationId)
+  const pathTest = `${BASE_URL}/userActivity/${affirmationId}`
+  console.log(pathTest)
+  const res = await fetch(pathTest, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }
+  })
+  console.log(res)
+  return res.json()
+}
+
+
+export { getAllProfiles, create, show, deleteOne }

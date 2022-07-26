@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import styles from './AffirmationForm.module.css'
-import * as authService from '../../services/authService'
 import * as profileService from '../../services/profileService'
 
 const AffirmationForm = (props, { user }) => {
@@ -10,36 +9,27 @@ const AffirmationForm = (props, { user }) => {
     thankful1: '',
     thankful2: '',
     thankful3: '',
-    didWell: '',
-    iLike: '',
+    thingsIDidWell: '',
+    selfComp: '',
   })
 
+  console.log(profile)
 
-
-  const navigate = useNavigate()
 
   const handleChange = e => {
-    props.updateMessage('')
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async evt => {
     evt.preventDefault()
-    try {
-      await authService.login(formData)
-      props.handleSignupOrLogin()
-      navigate('/')
-      handleAddAffirmation(formData)
-      setFormData({
-        thankful1: '',
-        thankful2: '',
-        thankful3: '',
-        didWell: '',
-        iLike: '',
-      })
-    } catch (err) {
-      props.updateMessage(err.message)
-    }
+    handleAddAffirmation(formData)
+    setFormData({
+      thankful1: '',
+      thankful2: '',
+      thankful3: '',
+      thingsIDidWell: '',
+      selfComp: '',
+    })
   }
 
 
@@ -89,37 +79,37 @@ const AffirmationForm = (props, { user }) => {
           </ol>
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="didWell" className={styles.label}>One thing you did well today</label>
+          <label htmlFor="thingsIDidWell" className={styles.label}>One thing you did well today</label>
           <input
             type="text"
             autoComplete="off"
             id="didwell"
-            value={formData.didWell}
-            name="didWell"
+            value={formData.thingsIDidWell}
+            name="thingsIDidWell"
             onChange={handleChange}
             required
           />
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="iLike" className={styles.label}>One thing you like about yourself</label>
+          <label htmlFor="selfComp" className={styles.label}>One thing you like about yourself</label>
           <input
             type="text"
             autoComplete="off"
-            id="iLike"
-            value={formData.iLike}
-            name="iLike"
+            id="selfComp"
+            value={formData.selfComp}
+            name="selfComp"
             onChange={handleChange}
             required
           />
         </div>
         <div className={styles.buttonsDiv}>
           <button
-            className={styles.button - 17}
+            className={styles.button17}
             type="submit">
             Submit
           </button>
           <Link to="/">
-            <button>Cancel</button>
+            <button className={styles.button17}>Cancel</button>
           </Link>
         </div>
       </form>

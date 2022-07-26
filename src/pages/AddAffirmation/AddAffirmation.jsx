@@ -1,38 +1,30 @@
-import FormImg from '../../assests/flower-aff-bg.png'
+import AffirmationForm from "../../components/AffirmationForm/AffirmationForm";
 import styles from './AddAffirmation.module.css'
+import { useState, useEffect } from "react";
+import * as profileService from '../../services/profileService'
+import { useParams } from "react-router-dom";
+import FormImg from '../../assests/flower-aff-bg.png'
 
-const AddAffirmation = () => {
+const AddAffirmation = ( { user }) => {
+  const [profile, setProfile] = useState()
+  const { id } = useParams()
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profileService.show(id)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [id])
+
   return (
     <div className={styles.affirmationBg}>
       <div className={styles.affirmationHeaderDiv}>
         <h1 className={styles.h1}>You're doing great.</h1>
       </div>
-      <div className={styles.formBodyDiv}>
-        <form
-          autoComplete="off"
-          ref={formElement}
-          onSubmit={handleSubmit}
-          className={styles.formBody}
-        >
-          <label className={styles.inputLabel} htmlFor="affirmation-input">
-            Three things you're thankful for
-          </label>
-          <input type="text" className={styles.inputContainer} required />
-          <input type="text" className={styles.inputContainer} required />
-          <input type="text" className={styles.inputContainer} required />
-
-          <label className={styles.inputLabel} htmlFor="affirmation-input">
-            One thing you did well today
-          </label>
-          <input type="text" className={styles.inputContainer2} required />
-
-          <label className={styles.inputLabel} htmlFor="affirmation-input">
-            One thing you like about yourself
-          </label>
-          <input type="text" className={styles.inputContainer2} required />
-        </form>
-        <button type="submit" className={styles.button-17}>SUBMIT</button>
-      </div>
+      <AffirmationForm 
+        profile={profile}
+        />
       <div className={styles.flowerDiv}>
         <img
           className={styles.flowerImg}

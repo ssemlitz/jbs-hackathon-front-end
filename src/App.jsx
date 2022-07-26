@@ -7,7 +7,11 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/AllAffirmations.jsx/AllAffirmations'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import AddAffirmation from './pages/AddAffirmation/AddAffirmation'
+import Profile from './pages/Profile/Profile'
+// import Index from './pages/Index/Index'
 import Affirmation from './pages/Affirmation/Affirmation'
+
 
 
 const App = () => {
@@ -52,7 +56,17 @@ const App = () => {
           }
         />
 
-        <Route path="/affirmations" />
+        <Route
+          path="/profiles/:id"
+          element={<Profile
+            profile={user?.profile}
+            user={user}
+          />}
+        />
+
+        <Route path="/addAffirmation"
+          element={<AddAffirmation />}
+        />
       </Routes>
     </>
   )

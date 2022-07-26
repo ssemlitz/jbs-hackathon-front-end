@@ -1,4 +1,4 @@
-import AffirmationCard from "../../components/AffirmationCards/AffirmationCard";
+import AffirmationCard from "../../components/AffirmationCard/AffirmationCard";
 import styles from './Affirmation.module.css'
 
 const Affirmation = () => {

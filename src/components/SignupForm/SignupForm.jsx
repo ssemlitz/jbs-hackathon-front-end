@@ -22,9 +22,7 @@ const SignupForm = props => {
     })
   }
 
-  const handleChangePhoto = (evt) => {
-    setPhotoData({ photo: evt.target.files[0] })
-  }
+
 
   const handleSubmit = async e => {
     e.preventDefault()

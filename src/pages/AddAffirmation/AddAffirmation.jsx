@@ -3,12 +3,11 @@ import styles from './AddAffirmation.module.css'
 import { useState, useEffect } from "react";
 import * as profileService from '../../services/profileService'
 import { useParams } from "react-router-dom";
+import FormImg from '../../assests/flower-aff-bg.png'
 
 const AddAffirmation = ( { user }) => {
   const [profile, setProfile] = useState()
   const { id } = useParams()
-
-
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -29,7 +28,7 @@ const AddAffirmation = ( { user }) => {
       <div className={styles.flowerDiv}>
         <img
           className={styles.flowerImg}
-          src="../../public/flower-aff-bg.png"
+          src={ FormImg }
           alt="Img of Affirmation Flower"
         />
       </div>

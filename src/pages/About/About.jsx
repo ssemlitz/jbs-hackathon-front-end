@@ -24,7 +24,7 @@ const About = props => {
             <br />
             <p>
               The creators of re/mind were inspired to build this app after experiencing the intense doubt, social comparison, and fear of failure that rigorous academic settings can produce.
-              We made re/mind to help ourselves and others lean into a positive outlook and, ultimately approach their challenges with optimism and self-confidence. Positive thinking has been (very thoroughly) linked to a longer lifespan, a greater resistance to illness, lower levels of pain and distress, and better physical and psychological well-being (among many, many more benefits). We're here to help you look on the bright side, and if you forget, don't worry-- we'll re/mind you :).
+              We made re/mind to help ourselves and others lean into a positive outlook and approach challenges with optimism and self-confidence. Positive thinking has been (very thoroughly) linked to a longer lifespan, a greater resistance to illness, lower levels of pain and distress, and better physical and psychological well-being (among many, many more benefits). We're here to help you look on the bright side, and if you forget, don't worry-- we'll re/mind you :).
             </p>
           </div>
         </div>

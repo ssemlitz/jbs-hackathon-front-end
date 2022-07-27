@@ -1,9 +1,7 @@
-
 import styles from './About.module.css'
-import flowerPic from '../../assests/flower-aff-bg.png'
+import flowerPic from '../../assets/flower-aff-bg.png'
 
 const About = props => {
-
 
   return (
     <main>

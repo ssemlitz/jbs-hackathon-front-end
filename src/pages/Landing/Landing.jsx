@@ -1,5 +1,5 @@
 import styles from './Landing.module.css'
-import LandingPic from '../../assests/landing-flower-bg.png'
+import LandingPic from '../../assets/landing-flower-bg.png'
 
 const Landing = ({ user }) => {
   return (

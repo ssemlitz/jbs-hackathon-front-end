@@ -2,7 +2,7 @@ import styles from './AffirmationCard.module.css'
 import { Link } from 'react-router-dom'
 
 const AffirmationCard = (props) => {
-  
+
   return (
     <>
       <div className={styles.affirmationCardDiv}>

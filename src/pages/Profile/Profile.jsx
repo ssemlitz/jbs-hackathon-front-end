@@ -4,7 +4,8 @@ import styles from './Profile.module.css'
 import * as profileService from '../../services/profileService'
 import AffirmationCard from '../../components/AffirmationCard/AffirmationCard'
 import { Link } from "react-router-dom"
-import flowerPic from '../../assests/flower-aff-bg.png'
+import flowerPic from '../../assets/flower-aff-bg.png'
+
 
 
 
@@ -164,6 +165,7 @@ const Profile = ({ user }) => {
                   <AffirmationCard
                     key={affirmation._id}
                     affirmation={affirmation}
+                    createdAt={affirmation.createdAt}
                     profile={user?.profile}
                     user={user}
                     handleDeleteAffirmation={handleDeleteAffirmation}

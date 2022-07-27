@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&family=Montserrat:wght@100;200;300;400;500;600&family=Raleway:wght@300;400;500;600;700;800&family=Shrikhand&family=Sonsie+One&display=swap');
+
+
+
+.aboutPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.flowerTextDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.header {
+  margin: 60px 0 10px 0;
+}
+
+.h1 {
+  margin: 60px 0 0 0;
+  font-weight: 400;
+}
+
+.imgDiv {
+  margin: 150px -20px 0 -60px;
+}
+.flowerProfImg {
+  max-height: 500px;
+  opacity: .65;
+}
+
+.textDiv {
+  width: 50%;
+  margin: 0 30px 0 0;
+}
+
+
+.p1 {
+  margin: 0 0 0 -150px;
+}
+
+.link {
+  text-decoration: none;
+  color: #7f4815
+}
+
+.link:hover {
+  color:rgb(47, 164, 185)
+}

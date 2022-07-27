@@ -9,6 +9,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddAffirmation from './pages/AddAffirmation/AddAffirmation'
 import Profile from './pages/Profile/Profile'
+import About from './pages/About/About'
 // import Index from './pages/Index/Index'
 // import Affirmation from './pages/Affirmation/Affirmation'
 
@@ -67,9 +68,12 @@ const App = () => {
         <Route path="/:id/affirmations"
           element={<AddAffirmation />}
         />
+        <Route path="/about"
+          element={<About />}
+        />
       </Routes>
 
-      
+
 
     </>
   )

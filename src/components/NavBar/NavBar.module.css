@@ -11,7 +11,7 @@ nav {
   align-items: center;
   border-bottom: 2px solid #f9ece0;
   background-color: #aa8567;
-  z-index: 999999999;
+  z-index: 9999;
 }
 
 .navLink {

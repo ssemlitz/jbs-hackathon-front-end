@@ -9,7 +9,7 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-bottom: 2px solid #f9ece0;
+  border-bottom: 2px solid #4b3321;;
   background-color: #aa8567;
   z-index: 9999;
 }

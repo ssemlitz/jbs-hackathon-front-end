@@ -165,7 +165,6 @@ const Profile = ({ user }) => {
                   <AffirmationCard
                     key={affirmation._id}
                     affirmation={affirmation}
-                    createdAt={affirmation.createdAt}
                     profile={user?.profile}
                     user={user}
                     handleDeleteAffirmation={handleDeleteAffirmation}

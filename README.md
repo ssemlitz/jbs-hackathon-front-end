@@ -1,6 +1,10 @@
 # **re/mind**
 
+### Landing Page
 ![Landing Page Image](/src/assets/remind-landing.png)
+
+### Affirmation Form
+![Landing Page Image](/src/assets/remind-affirmation-form.png)
 
 #### A MERN Stack Application 
 

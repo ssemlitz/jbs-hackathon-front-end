@@ -4,11 +4,12 @@ import styles from './Profile.module.css'
 import * as profileService from '../../services/profileService'
 import AffirmationCard from '../../components/AffirmationCard/AffirmationCard'
 import { Link } from "react-router-dom"
+import flowerPic from '../../assests/flower-aff-bg.png'
 
 
 
 const Profile = ({ user }) => {
-  const {id} = useParams()
+  const { id } = useParams()
   const [profile, setProfile] = useState()
   const [formData, setFormData] = useState({
     thankful1: '',
@@ -62,93 +63,102 @@ const Profile = ({ user }) => {
     <>
       <main>
         <div className={styles.profilePage}>
-          <div className={styles.profileGreeting}>
+
+
+          {/* <div className={styles.profileGreeting}>
             <h4 className={styles.profNameh4}>{profile?.name}</h4>
-          </div>
+          </div> */}
           <div className={styles.profilePageContents}>
+          <div className={styles.flowerForm}>
 
 
             {/* affirmation form */}
 
             <div className={styles.formBodyDiv}>
-      <form
-        className={styles.formBody}
-        autoComplete="off"
-        onSubmit={handleSubmit}>
-        <div className={styles.inputContainer}>
-          <label htmlFor="thankful">Three things you're thankful for</label>
-          <ol className={styles.orderedInput}>
-            <input
-              type="text"
-              className="thankful-1"
-              id="thankful-1"
-              name="thankful1"
-              value={formData.thankful1}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              className="thankful-2"
-              id="thankful-2"
-              name="thankful2"
-              value={formData.thankful2}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              className="thankful-3"
-              id="thankful-3"
-              name="thankful3"
-              value={formData.thankful3}
-              onChange={handleChange}
-              required
-            />
-          </ol>
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="thingsIDidWell" className={styles.label}>One thing you did well today</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="didwell"
-            value={formData.thingsIDidWell}
-            name="thingsIDidWell"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="selfComp" className={styles.label}>One thing you like about yourself</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="selfComp"
-            value={formData.selfComp}
-            name="selfComp"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.buttonsDiv}>
-          <button
-            className={styles.button17}
-            type="submit">
-            Submit
-          </button>
-          <Link to="/">
-            <button className={styles.button17}>Cancel</button>
-          </Link>
-        </div>
-      </form>
-    </div>
+              <form
+                className={styles.formBody}
+                autoComplete="off"
+                onSubmit={handleSubmit}>
+                <div className={styles.inputContainer}>
+                  <label htmlFor="thankful">Three things you're thankful for</label>
+                  <input
+                    type="text"
+                    className="thankful-1"
+                    id="thankful-1"
+                    name="thankful1"
+                    value={formData.thankful1}
+                    onChange={handleChange}
+                    placeholder="I'm thankful for..."
+                    required
+                  />
+                  <input
+                    type="text"
+                    className="thankful-2"
+                    id="thankful-2"
+                    name="thankful2"
+                    value={formData.thankful2}
+                    onChange={handleChange}
+                    placeholder="I'm thankful for..."
+                    required
+                  />
+                  <input
+                    type="text"
+                    className="thankful-3"
+                    id="thankful-3"
+                    name="thankful3"
+                    value={formData.thankful3}
+                    onChange={handleChange}
+                    placeholder="I'm thankful for..."
+                    required
+                  />
+                </div>
+                <div className={styles.inputContainer}>
+                  <label htmlFor="thingsIDidWell" className={styles.label}>One thing you did well today</label>
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    id="didwell"
+                    value={formData.thingsIDidWell}
+                    name="thingsIDidWell"
+                    onChange={handleChange}
+                    placeholder="Something I did well..."
+                    required
+                  />
+                </div>
+                <div className={styles.inputContainer}>
+                  <label htmlFor="selfComp" className={styles.label}>One thing you like about yourself</label>
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    id="selfComp"
+                    value={formData.selfComp}
+                    name="selfComp"
+                    onChange={handleChange}
+                    placeholder="I like..."
+                    required
+                  />
+                </div>
+                <div className={styles.inputContainer}>
+                  <button
+                    className={styles.button17}
+                    type="submit">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div className={styles.flowerImgDiv}>
+              <img className={styles.flowerProfImg} src={flowerPic} alt="flowerpic" />
+            </div>
+            </div>
 
 
 
 
 
-            {profile?.userActivity?.length ?
+
+            <div className={styles.affCardDiv}>
+          {profile?.affirmations?.length ?
               <>
                 {profile?.affirmations?.map(affirmation =>
                   <AffirmationCard
@@ -165,9 +175,10 @@ const Profile = ({ user }) => {
                 <p>Affirmations you create will appear here</p>
               </>
             }
-
+          </div>
 
           </div>
+          
         </div>
       </main>
 

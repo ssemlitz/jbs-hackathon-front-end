@@ -9,7 +9,7 @@ const Landing = ({ user }) => {
       </div>
       <div className={styles.landingTextDiv}>
         <div className={styles.h1Div}>
-          <h1 className={styles.h1}>re/frame</h1>
+          <h1 className={styles.h1}>re/mind</h1>
         </div>
         <div className={styles.subtextDiv}>
           <h3 className={styles.h3}>grow with intentional gratitude</h3>

@@ -9,7 +9,7 @@ const AffirmationCard = (props) => {
         <div className={styles.cardBodyDiv}>
           <div className={styles.thankfulDiv}>
             <div className={styles.labelDiv}>
-              <h3 className={styles.h3}>Three things you're thankful for</h3>
+              <h3 className={styles.h3}>Three good things about today</h3>
             </div>
             <div className={styles.thankfulContentDiv}>
               <ol>

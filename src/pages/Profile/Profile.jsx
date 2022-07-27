@@ -80,7 +80,7 @@ const Profile = ({ user }) => {
                 autoComplete="off"
                 onSubmit={handleSubmit}>
                 <div className={styles.inputContainer}>
-                  <label htmlFor="thankful">Three things you're thankful for</label>
+                  <label htmlFor="thankful">Three good things about today</label>
                   <input
                     type="text"
                     className="thankful-1"
@@ -88,7 +88,7 @@ const Profile = ({ user }) => {
                     name="thankful1"
                     value={formData.thankful1}
                     onChange={handleChange}
-                    placeholder="I'm thankful for..."
+                    placeholder="First good thing..."
                     required
                   />
                   <input
@@ -98,7 +98,7 @@ const Profile = ({ user }) => {
                     name="thankful2"
                     value={formData.thankful2}
                     onChange={handleChange}
-                    placeholder="I'm thankful for..."
+                    placeholder="Second good thing..."
                     required
                   />
                   <input
@@ -108,7 +108,7 @@ const Profile = ({ user }) => {
                     name="thankful3"
                     value={formData.thankful3}
                     onChange={handleChange}
-                    placeholder="I'm thankful for..."
+                    placeholder="Third good thing..."
                     required
                   />
                 </div>

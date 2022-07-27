@@ -3,7 +3,7 @@
 
 
 .landingBg {
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   background-color: #CDA98B;
   display: flex;
@@ -13,7 +13,7 @@
 }
 
 .flowerLandDiv {
-  width: 70%;
+  max-height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 .flowerLandImg {
-  height: 1100px;
+  max-height: 850px;
   opacity: .8;
 }
 

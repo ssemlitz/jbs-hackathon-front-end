@@ -13,7 +13,7 @@ const Landing = ({ user }) => {
         </div>
         <div className={styles.subtextDiv}>
           <h3 className={styles.h3}>grow with intentional gratitude</h3>
-          <h4 className={styles.h4}><a href="https://today.duke.edu/2016/02/resilience" className={styles.dukeLink}>based on groundbreaking study from Duke University</a></h4>
+          <h4 className={styles.h4}><a href="https://today.duke.edu/2016/02/resilience" className={styles.dukeLink}>based on a groundbreaking study from Duke University</a></h4>
         </div>
       </div>
     </div>

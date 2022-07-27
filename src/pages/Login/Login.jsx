@@ -10,14 +10,18 @@ const LoginPage = props => {
   }
 
   return (
-    <main className={styles.container}>
-      <h1>Log In</h1>
-      <p>{message}</p>
-      <LoginForm
-        handleSignupOrLogin={props.handleSignupOrLogin}
-        updateMessage={updateMessage}
-      />
-    </main>
+
+    <div className={styles.loginPage}>
+      <main className={styles.container}>
+        <h1 className={styles.h1}>Log In</h1>
+        <p>{message}</p>
+        <LoginForm
+          handleSignupOrLogin={props.handleSignupOrLogin}
+          updateMessage={updateMessage}
+        />
+      </main>
+    </div>
+
   )
 }
 

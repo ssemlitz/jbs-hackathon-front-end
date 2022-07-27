@@ -1,5 +1,69 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&family=Montserrat:wght@100;200;300;400;500;600&family=Raleway:wght@300;400;500;600;700;800&family=Shrikhand&family=Sonsie+One&display=swap');
+
+
+
+.landingBg {
+  height: 100vh;
+  width: 100vw;
+  background-color: #CDA98B;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flowerLandDiv {
+  width:70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+
+}
+
+.flowerLandImg {
+  height: 1100px;
+  opacity: .85;
+}
+
+.landingTextDiv {
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #4b3321;
+
+}
+
+
+.h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 4em;
+}
+
+.subtextDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.h3, .h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: .9;
+}
+
+.h3 {
+  font-size: 1.6em;
+}
+
+.h4 {
+  font-size: 1.3em;
 }

@@ -44,7 +44,7 @@ async function show(id) {
 
 async function deleteOne(affirmationId) {
   console.log(affirmationId)
-  const pathTest = `${BASE_URL}/userActivity/${affirmationId}`
+  const pathTest = `${BASE_URL}/affirmations/${affirmationId}`
   console.log(pathTest)
   const res = await fetch(pathTest, {
     method: 'DELETE',

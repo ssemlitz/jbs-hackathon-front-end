@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&family=Montserrat:wght@100;200;300;400;500;600&family=Raleway:wght@300;400;500;600;700;800&family=Shrikhand&family=Sonsie+One&display=swap');
+
+
+body {
+  background-color: #fcf2e8;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.profilePage {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.profilePageContents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  margin: 40px 0 0 0;
+  /* height: 70%;  */
+
+}
+
+.flowerForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  margin: 40px 0 0 0;
+  /* height: 80%; */
+}
+
+
+.flowerImgDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flowerProfImg {
+  height: 900px;
+  opacity: .85;
+}
+
+
+.formBodyDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 80%;
+}
+
+.formBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 30px 0 0 90px;
+  width: 100%;
+}
+
+input {
+  margin: 25px 0 0 0;
+  width: 100%;
+  background-color: #fbf6ef;
+  border: 1px solid #c9ad9e;
+  padding: 10px;
+}
+
+label {
+  color: #4b3321;
+  font-size: 1.5em;
+}
+
+.thankful-1,
+.thankful-2,
+.thankful-3 {
+  margin: 20px;
+}
+
+.buttonsDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+
+.button17 {
+  align-items: center;
+  background-color: #e4d1c2;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #4b3321;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.25;
+  height: 2.5em;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 105%;
+}
+
+.button17:hover,
+.button17:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: #4b3321;
+}
+
+.button17:hover {
+  transform: translateY(-1px);
+}
+
+.button17:active {
+  background-color: #fbf6ef;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: #4b3321;
+  transform: translateY(0);
+}
+
+
+.affCardDiv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 60px 0 0 70px;
+}

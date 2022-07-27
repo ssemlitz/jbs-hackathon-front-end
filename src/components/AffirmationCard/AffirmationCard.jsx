@@ -2,6 +2,7 @@ import styles from './AffirmationCard.module.css'
 import { Link } from 'react-router-dom'
 
 const AffirmationCard = (props) => {
+  
   return (
     <>
       <div className={styles.affirmationCardDiv}>
@@ -38,7 +39,7 @@ const AffirmationCard = (props) => {
           </div>
 
           <div className={styles.buttonHolder}>
-            <button className={styles.button17} onClick={() => props.handleAffirmation(props.activity._id)}>Delete</button>
+            <button className={styles.button17} onClick={() => props.handleDeleteAffirmation(props.affirmation._id)}>Delete</button>
           </div>
         </div>
       </div>

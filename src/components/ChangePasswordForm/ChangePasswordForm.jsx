@@ -37,6 +37,8 @@ const ChangePasswordForm = props => {
   }
 
   return (
+    <>
+    <div className={styles.formDiv}>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
@@ -85,11 +87,10 @@ const ChangePasswordForm = props => {
         <button disabled={isFormInvalid()} className={styles.button17}>
           Change Password
         </button>
-        <Link to="/">
-          <button className={styles.button17}>Cancel</button>
-        </Link>
       </div>
     </form>
+    </div>
+    </>
   )
 }
 
